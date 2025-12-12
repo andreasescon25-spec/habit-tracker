@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding so text displays correctly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site responsive on mobile -->
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="Andrea.css"> <!-- Links your CSS file -->
+</head>
+
+<body>
+
+    <!-- ---------------- PROFILE SECTION ---------------- -->
+    <div id="profile">
+        <!-- Profile picture (Base64 embedded image) -->
+        <img 
+            id="profile-pic" 
+            src="https://www.bing.com/th/id/OIP.3oeW0zaj7rmvi362IjKvrAHaHa?w=197&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" 
+            alt="Profile Picture"
+        >
+
+        <!-- User name displayed beside profile picture -->
+        <h1>Andrea Sescon</h1>
+    </div>
+
+    <!-- ---------------- MAIN HABIT TRACKER CONTAINER ---------------- -->
+    <div id="habit-tracker">
+        <h1>Habit Tracker</h1>
+        <h2>Daily Habits</h2>
+
+        <!-- List of all habits -->
+        <div id="habits-list">
+
+            <!-- Each habit has: a button, a label, and a streak counter -->
+            <div class="habit" data-habit="wake-up">
+                <button class="habit-btn">☐</button> <!-- Click to mark habit completed -->
+                Wake up early
+                <span class="streak">Streak: 0</span>
+            </div>
+
+            <div class="habit" data-habit="drink-water">
+                <button class="habit-btn">☐</button>
+                Drink water
+                <span class="streak">Streak: 0</span>
+            </div>
+
+            <div class="habit" data-habit="exercise">
+                <button class="habit-btn">☐</button>
+                Exercise
+                <span class="streak">Streak: 0</span>
+            </div>
+
+            <div class="habit" data-habit="read">
+                <button class="habit-btn">☐</button>
+                Read
+                <span class="streak">Streak: 0</span>
+            </div>
+
+            <div class="habit" data-habit="meditate">
+                <button class="habit-btn">☐</button>
+                Meditate
+                <span class="streak">Streak: 0</span>
+            </div>
+
+        </div>
+
+        <!-- ---------------- PROGRESS VISUALIZATION SECTION ---------------- -->
+        <div id="progress-section">
+
+            <h3>Visual Progress Indicators</h3>
+
+            <!-- Canvas: where graph is drawn by JavaScript -->
+            <canvas id="progress-canvas" width="400" height="300"></canvas>
+
+            <!-- Select which day (1–7) you're viewing -->
+            <div id="day-selector">
+                <label for="day-select">Day:</label>
+                <select id="day-select">
+                    <option value="1">Day 1</option>
+                    <option value="2">Day 2</option>
+                    <option value="3">Day 3</option>
+                    <option value="4">Day 4</option>
+                    <option value="5">Day 5</option>
+                    <option value="6">Day 6</option>
+                    <option value="7">Day 7</option>
+                </select>
+            </div>
+
+            <!-- Countdown until habits reset at midnight -->
+            <div id="countdown">
+                Resets in: <span id="time-left">24:00:00</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript file that controls interactions, streaks, and graph -->
+    <script src="Andrea.js"></script>
+</body>
+</html>

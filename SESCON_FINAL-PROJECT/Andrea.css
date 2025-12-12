@@ -1,0 +1,132 @@
+/* ----------- GLOBAL PAGE STYLING ----------- */
+
+body {
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    font-family: Arial, sans-serif; /* Sets the font for the whole page */
+
+    /* Animated gradient background */
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 400% 400%; /* Makes gradient large enough to animate smoothly */
+    animation: gradientShift 10s ease infinite; /* Runs the gradient animation continuously */
+
+    color: #333; /* Default text color */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Animation that moves the gradient back and forth */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ----------- PROFILE SECTION ----------- */
+
+#profile {
+    margin: 0 auto; /* Centers the profile section */
+    width: fit-content; /* Makes width adjust to content size */
+    display: flex; /* Places picture and text side by side */
+    align-items: center; /* Vertically centers the items */
+
+    /* Glass-like background effect */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Soft blur transparency */
+}
+
+#profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 10px; /* Spacing between pic and name */
+}
+
+#profile h1 {
+    margin: 0; /* Removes spacing above and below */
+    font-size: 1.2em;
+    color: #fff; /* White text for contrast against the gradient */
+}
+
+/* ----------- HABIT TRACKER BOX ----------- */
+
+#habit-tracker {
+    max-width: 600px; /* Limits how wide the box gets */
+    margin: 100px auto 20px; /* Centers the box + top spacing */
+    padding: 20px; /* Inner spacing */
+
+    background: rgba(255, 255, 255, 0.9); /* Light white background */
+    border: 5px solid #000; /* Thick dark border for contrast */
+    border-radius: 15px; /* Rounded corners */
+
+    /* Soft shadow to make it pop */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #444; /* Slightly darker heading color */
+}
+
+/* ----------- HABIT LIST ----------- */
+
+#habits-list {
+    margin-bottom: 20px;
+}
+
+.habit {
+    display: flex; /* Aligns button, text, and streak horizontally */
+    align-items: center; /* Vertically centers content */
+    margin: 10px 0; /* Space between habits */
+    padding: 10px; /* Inner spacing */
+
+    background: #e0f7fa; /* Light teal background */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.habit-btn {
+    margin-right: 10px; /* Space between button and habit text */
+    font-size: 1.5em; /* Make icons/emojis bigger */
+    background: none; /* No button background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor for interactivity */
+
+    /* Button enlarges slightly when hovered */
+    transition: transform 0.2s;
+}
+
+.habit-btn:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.streak {
+    margin-left: auto; /* Pushes streak count to the far right */
+    font-weight: bold;
+    transition: color 0.3s; /* Used for dynamic streak color changes */
+}
+
+/* ----------- PROGRESS CANVAS SECTION ----------- */
+
+#progress-section {
+    text-align: center;
+}
+
+#progress-canvas {
+    border: 2px solid #333;
+    background: #f9f9f9;
+    margin: 10px auto; /* Centers the canvas */
+    display: block; /* Ensures proper centering behavior */
+}
+
+/* ----------- DAY SELECTOR & COUNTDOWN ----------- */
+
+#day-selector {
+    margin: 10px 0; /* Space above and below */
+}
+
+#countdown {
+    margin-top: 10px;
+    font-size: 1.1em; /* Slightly larger text */
+    color: #555;
+}
